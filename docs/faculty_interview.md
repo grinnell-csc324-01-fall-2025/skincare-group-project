@@ -1,5 +1,5 @@
 # Interview with Faculty Member Notes
-### Nicole Gorrell
+**Nicole Gorrell**
 
 I interview a professor outside of the CS Department because I thought it would be interesting to hear a non-student perspective regarding cancer skins, skincare, and using some sort of bodily recognition software, while also maintaining that the interviewee may not have necessarily been well-versed with technology. Below are the questions I asked the interviewee and her responses that I annotated:
 
@@ -31,4 +31,4 @@ Aging spots, as she has more than most people. They are hereditary, and this fac
 
 6. Do you already have a skincare routine? What kinds of products do you use?
 
-Uses suncreen with an SPF of 50 or higher and tries to avoid peak hours of UV exposure when possible (such as midday). Some habits 
+Uses suncreen with an SPF of 50 or higher and tries to avoid peak hours of UV exposure when possible (such as midday). Some habits to limit exposure include running in the early mornings, but she finds it hard to avoid when doing water activities. She does reapply her sunscreen every 2 hours, noting how she wouldn't use sunscreen when she was younger. 
