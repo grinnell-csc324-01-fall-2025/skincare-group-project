@@ -1,6 +1,6 @@
 # Ideation -- World's Worst Idea
 
-**Ideas**:
+**Ideas:**
 * Posting photos of users' skin online, or sharing these photos without their knowledge/permission
 * Adding features that have nothing to do with the purpose of our app (i.e. Doordash connectivity)
 * Recommending products/treatments without doing prior research into their efficacy and general reception with their respective users
