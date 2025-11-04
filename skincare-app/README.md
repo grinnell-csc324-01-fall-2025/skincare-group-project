@@ -48,3 +48,16 @@ Join our community of developers creating universal apps.
 
 - [Expo on GitHub](https://github.com/expo/expo): View our open source platform and contribute.
 - [Discord community](https://chat.expo.dev): Chat with Expo users and ask questions.
+
+
+## Notes/resources
+- [video 1 in tutorial](https://www.youtube.com/watch?v=Hp9sTsiTZ_I)
+- [expo documentation site](https://docs.expo.dev/)
+- resources/dependencies
+   - download vscode, git if necessary, node.js
+   - 'npm install'
+   - recommended extensions:
+      - React Native Tools
+      - Expo Tools
+      - ES7+ React/Redux/React-Native snippets
+      - update necessary packages (i.e. expo, expo-web-browser, same npm install structure to start)
