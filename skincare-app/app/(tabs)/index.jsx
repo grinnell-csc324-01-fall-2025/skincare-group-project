@@ -50,9 +50,8 @@ const ResultsScreen = () => {
 // Create a Stack Navigator
 const Stack = createStackNavigator();
 
-const app = () => {
+const TabStack = () => {
   return (
-    <NavigationContainer>
       <Stack.Navigator initialRouteName="StartingScreen">
         <Stack.Screen name="StartingScreen" component={StartingScreen} />
         <Stack.Screen name="MainConcernsScreen" component={MainConcernsScreen} />
@@ -61,8 +60,7 @@ const app = () => {
         <Stack.Screen name="LiveScanScreen" component={LiveScanScreen} />
         <Stack.Screen name="ResultsScreen" component={ResultsScreen} />
       </Stack.Navigator>
-    </NavigationContainer>
   );
 };
 
-export default app;
+export default TabStack;
