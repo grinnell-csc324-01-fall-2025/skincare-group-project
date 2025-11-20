@@ -2,6 +2,7 @@ import { DarkTheme, DefaultTheme, NavigationContainer, ThemeProvider } from '@re
 import { Stack } from 'expo-router';
 import { StatusBar } from 'expo-status-bar';
 import 'react-native-reanimated';
+import TabStack from './(tabs)/index';
 
 import { useColorScheme } from '@/hooks/use-color-scheme';
 
@@ -19,6 +20,9 @@ export default function RootLayout() {
         <Stack.Screen name="modal" options={{ presentation: 'modal', title: 'Modal' }} />
       </Stack>
       <StatusBar style="auto" />
+      <NavigationContainer>
+        <TabStack />
+      </NavigationContainer>
     </ThemeProvider>
   );
 }
