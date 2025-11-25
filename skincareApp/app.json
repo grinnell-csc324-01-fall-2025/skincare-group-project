@@ -1,7 +1,7 @@
 {
   "expo": {
-    "name": "skincare-app",
-    "slug": "skincare-app",
+    "name": "skincareApp",
+    "slug": "skincareApp",
     "version": "1.0.0",
     "orientation": "portrait",
     "icon": "./assets/images/icon.png",
