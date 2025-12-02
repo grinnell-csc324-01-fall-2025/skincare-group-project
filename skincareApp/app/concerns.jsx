@@ -26,15 +26,15 @@ const concernsScreen = () => {
           const selected = selectedIds.includes(option.id);
           return (
             <TouchableOpacity
-              key={option.id}
-              style={[
+              key = {option.id}
+              style = {[
                 styles.button,
                 selected ? styles.selectedButton : styles.unselectedButton,
               ]}
-              onPress={() => toggleOption(option.id)}
+              onPress = {() => toggleOption(option.id)}
             >
               <Text
-                style={[
+                style = {[
                   styles.buttonText,
                   selected ? styles.selectedButtonText : styles.unselectedButtonText,
                 ]}
@@ -49,8 +49,8 @@ const concernsScreen = () => {
 
     <View style = {styles.next}>
       <Link href = "/index" asChild>
-        <TouchableOpacity style={styles.nextButton}>
-          <Text style={styles.nextButtonText}>Next</Text>
+        <TouchableOpacity style = {styles.nextButton}>
+          <Text style = {styles.nextButtonText}>Next </Text>
         </TouchableOpacity>
       </Link>
       </View>
