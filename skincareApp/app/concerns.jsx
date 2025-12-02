@@ -56,7 +56,7 @@ const concernsScreen = () => {
         <TouchableOpacity style = {styles.nextButton}>
           <Text style = {styles.nextButtonText}>Next </Text>
         </TouchableOpacity>
-      </Link> */}
+      </Link>
       </View>
     </View>
   );
