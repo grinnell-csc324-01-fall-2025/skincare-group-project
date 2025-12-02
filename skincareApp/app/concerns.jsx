@@ -48,11 +48,17 @@ const concernsScreen = () => {
     </View>
 
     <View style = {styles.next}>
-      <Link href = "/index" asChild>
+      // Navigate to Results screen for testing, will need to change
+      <Link href={{ pathname: '/results', params: { tests: selectedIds.join(',') } }} asChild>
+        <TouchableOpacity style = {styles.nextButton}>
+          <Text style = {styles.nextButtonText}>Next</Text>
+        </TouchableOpacity>
+      </Link> 
+      {/* <Link href = "/results" asChild>
         <TouchableOpacity style={styles.nextButton}>
           <Text style={styles.nextButtonText}>Next</Text>
         </TouchableOpacity>
-      </Link>
+      </Link> */}
       </View>
     </View>
   );
