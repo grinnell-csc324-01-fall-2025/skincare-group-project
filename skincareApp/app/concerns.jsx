@@ -51,13 +51,13 @@ const concernsScreen = () => {
       <Link href = "/results" asChild>
         <MyButton text="Next"/>
       </Link>
-    <View style = {styles.next}>
+    {/* <View style = {styles.next}>
       <Link href = "/index" asChild>
         <TouchableOpacity style = {styles.nextButton}>
           <Text style = {styles.nextButtonText}>Next </Text>
         </TouchableOpacity>
       </Link>
-      </View>
+      </View> */}
     </View>
   );
 };
