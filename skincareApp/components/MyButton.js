@@ -1,7 +1,7 @@
 import { StyleSheet, TouchableOpacity,Text, View } from "react-native";
 import React from "react";
 
-export default function MyButton ({text, onPress, disabled, backgroundColor = "#2a9d8fff"}) {
+export default function MyButton ({text, onPress, disabled, backgroundColor = "#219ebcff"}) {
     return(
         <TouchableOpacity style={[styles.button, {backgroundColor : backgroundColor}]} onPress={onPress} disabled={disabled}>
             <Text style={styles.text}>{text}</Text>
@@ -14,14 +14,14 @@ const styles = StyleSheet.create({
         width: "100%",
         height: 70,
         borderRadius: 20,
-        marginVertical: 20,
+        marginVertical: 15,
         alignItems: "center",
         justifyContent: "center",
     },
 
     text: {
-        color: "#264653ff",
-        fontSize: 16,
+        color: "#ffffff",
+        fontSize: 18,
         fontWeight: "bold",
         textAlign: "center",
     },

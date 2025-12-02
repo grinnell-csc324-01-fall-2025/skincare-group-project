@@ -100,27 +100,20 @@ const homeScreen = () => {
     if (image == null) {
       return (
         <View style={styles.container}>
-          <View style={styles.imagePicker}> 
             <CameraView style={styles.previewImage} ref={cameraRef}/>
-              <TouchableOpacity style={styles.captureButton} onPress={takePhoto}>
-                <Text style={styles.text}>Take Pic</Text>
-              </TouchableOpacity>
-              <Link href="/concerns" push asChild>
-                <MyButton text="Continue"/>
-              </Link>
-          </View>
+            <TouchableOpacity style={styles.captureButton} onPress={takePhoto}>
+              <Text style={styles.text}>Take Pic</Text>
+            </TouchableOpacity>
         </View>
       )
     } else {
       return (
         <View style={styles.container}>
-          <View style={styles.imagePicker}>
             <Image source={{uri: image}} style={styles.previewImage} />
             <MyButton text="restart" onPress={() => {setReady(0); setImage(null);}} backgroundColor='#e76f51ff'/>
             <Link href="/concerns" push asChild>
-              <MyButton text="Continue"/>
+              <MyButton text="Next"/>
             </Link>
-          </View>
         </View>
       )
     }
@@ -134,7 +127,7 @@ const homeScreen = () => {
           <Image source={{uri: image}} style={styles.previewImage} />
           <MyButton text="restart" onPress={() => {setReady(0); setImage(null);}} backgroundColor='#e76f51ff'/>
           <Link href="/concerns" push asChild>
-            <MyButton text="Continue"/>
+            <MyButton text="Next"/>
           </Link>
         </View>
       </View>
@@ -154,7 +147,7 @@ const styles = StyleSheet.create({
   },
 
   header: {
-    color: "#023047",
+    color: "#023047ff",
     fontWeight: 'bold',
     fontSize: 24,
     textAlign: 'center',
@@ -162,22 +155,18 @@ const styles = StyleSheet.create({
   },
 
   text: {
-    color: "#023047",
+    color: "#023047ff",
     fontSize: 18,
     textAlign: "center",
     marginVertical: 10,
   },
 
   captureButton: {
-    width: "100%",
+    width: 200,
     height: 50,
     borderRadius: 20,
     marginVertical: 10,
-    backgroundColor: "#f4a261ff",
-    fontSize: 16,
-    fontWeight: "bold",
-    alignItems: "center",
-    justifyContent: "center",
+    backgroundColor: "#219ebcff",
   },
 
   imagePicker: {
@@ -187,7 +176,8 @@ const styles = StyleSheet.create({
 
   previewImage: {
     width: "100%",
-    height: "100%",
+    height: "70%",
+    overflow: 'hidden',
     borderRadius: 20,
   },
   placeholderContainer: {
