@@ -1,6 +1,7 @@
 import { View, Text, StyleSheet, TouchableOpacity } from 'react-native';
 import { Link } from 'expo-router';
 import { useState } from 'react';
+import MyButton from '../components/MyButton';
 
 const options = [
   {id: '1', label: 'Cancerous Moles'},
@@ -47,13 +48,9 @@ const concernsScreen = () => {
 
     </View>
 
-    <View style = {styles.next}>
-      <Link href = "/index" asChild>
-        <TouchableOpacity style = {styles.nextButton}>
-          <Text style = {styles.nextButtonText}>Next </Text>
-        </TouchableOpacity>
+      <Link href = "/results" asChild>
+        <MyButton text="Next"/>
       </Link>
-      </View>
     </View>
   );
 };
@@ -62,20 +59,23 @@ export default concernsScreen
 
 const styles = StyleSheet.create({
   container: {
+    flex: 1,
     padding: 20,
     alignItems: 'center',
+    justifyContent: 'center',
+
   },
   title: {
-    color: '#053a8fff',
-    fontWeight: 'bold',
-    fontSize: 35,
-    marginBottom: 16,
-    textAlign: 'center',
+    color: "#023047ff",
+    fontSize: 24,
+    textAlign: "center",
+    marginVertical: 10,
   },
   optionsContainer: {
     flexDirection: 'column',
     flexWrap: 'wrap',
     justifyContent: 'center',
+    marginVertical: 10
   },
   button: {
     paddingVertical: 10,
@@ -88,12 +88,12 @@ const styles = StyleSheet.create({
     minWidth: 140,
   },
   selectedButton: {
-    backgroundColor: '#9dc1fa',
-    borderColor: '#9dc1fa',
+    backgroundColor: '#8ecae6ff',
+    borderColor: '#8ecae6ff',
   },
   unselectedButton: {
     backgroundColor: '#fff',
-    borderColor: '#9dc1fa',
+    borderColor: '#8ecae6ff',
   },
   buttonText: {
     fontSize: 24,
@@ -104,22 +104,10 @@ const styles = StyleSheet.create({
     fontWeight: 'bold',
   },
   unselectedButtonText: {
-    color: '#9dc1fa',
+    color: '#8ecae6ff',
   },
   next: {
     marginTop: 24,
     width: '50%',
-  },
-  nextButton: {
-    backgroundColor: '#5288e0ff',
-    paddingVertical: 12,
-    paddingHorizontal: 16,
-    borderRadius: 8,
-    alignItems: 'center',
-  },
-  nextButtonText: {
-    color: '#ffffff',
-    fontWeight: 'bold',
-    fontSize: 16,
   },
 })
