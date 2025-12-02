@@ -6,10 +6,10 @@ const concernsScreen = () => {
 
   return (
     <View style = {styles.container}>
-      <h1 style = {styles.text}>Before we start, what concerns do you have?</h1>
+      <Text style = {styles.text}>Before we start, what concerns do you have?</Text>
 
       <View style={styles.buttons}>
-        <Link href="/index" pop>
+        <Link href="/results" push asChild>
           <Button 
             title="Cancerous Moles">
           </Button>
@@ -38,9 +38,10 @@ const styles = StyleSheet.create({
 
   },
   text: {
-    color: '#9dc1fa',
-    fontWeight: 'bold',
-    textAlign: 'center'
+    color: "#023047",
+    fontSize: 18,
+    textAlign: "center",
+    marginVertical: 10,
   },
   buttons: {
     marginTop: 30,
