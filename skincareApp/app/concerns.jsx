@@ -26,15 +26,15 @@ const concernsScreen = () => {
           const selected = selectedIds.includes(option.id);
           return (
             <TouchableOpacity
-              key={option.id}
-              style={[
+              key = {option.id}
+              style = {[
                 styles.button,
                 selected ? styles.selectedButton : styles.unselectedButton,
               ]}
-              onPress={() => toggleOption(option.id)}
+              onPress = {() => toggleOption(option.id)}
             >
               <Text
-                style={[
+                style = {[
                   styles.buttonText,
                   selected ? styles.selectedButtonText : styles.unselectedButtonText,
                 ]}
@@ -48,15 +48,9 @@ const concernsScreen = () => {
     </View>
 
     <View style = {styles.next}>
-      // Navigate to Results screen for testing, will need to change
-      <Link href={{ pathname: '/results', params: { tests: selectedIds.join(',') } }} asChild>
+      <Link href = "/index" asChild>
         <TouchableOpacity style = {styles.nextButton}>
-          <Text style = {styles.nextButtonText}>Next</Text>
-        </TouchableOpacity>
-      </Link> 
-      {/* <Link href = "/results" asChild>
-        <TouchableOpacity style={styles.nextButton}>
-          <Text style={styles.nextButtonText}>Next</Text>
+          <Text style = {styles.nextButtonText}>Next </Text>
         </TouchableOpacity>
       </Link> */}
       </View>
