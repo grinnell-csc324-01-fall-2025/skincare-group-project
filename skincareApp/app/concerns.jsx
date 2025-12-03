@@ -48,7 +48,7 @@ const concernsScreen = () => {
 
     </View>
 
-      <Link href = "/results" asChild>
+      <Link href = "/results" push asChild>
         <MyButton text="Next"/>
       </Link>
     <View style = {styles.next}>
