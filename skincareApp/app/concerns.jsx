@@ -48,16 +48,9 @@ const concernsScreen = () => {
 
     </View>
 
-      <Link href = "/results" asChild>
+      <Link href = "/results" push asChild>
         <MyButton text="Next"/>
       </Link>
-    {/* <View style = {styles.next}>
-      <Link href = "/index" asChild>
-        <TouchableOpacity style = {styles.nextButton}>
-          <Text style = {styles.nextButtonText}>Next </Text>
-        </TouchableOpacity>
-      </Link>
-      </View> */}
     </View>
   );
 };
