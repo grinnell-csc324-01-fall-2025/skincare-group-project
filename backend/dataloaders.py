@@ -4,7 +4,8 @@ import torchvision.transforms as TF
 from torch import Tensor
 
 
-# A class to 
+# A class to make a dataloader object for training, which
+# provides batches of data for training.
 class Dataset(torch.utils.data.Dataset):
 
     # initialization

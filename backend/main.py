@@ -8,6 +8,7 @@ from pydantic import BaseModel
 from train_oil_level_cnn import trainer
 from starlette.requests import Request
 from typing import List
+import uvicorn
 from PIL import Image
 
 app = FastAPI()
@@ -42,7 +43,6 @@ async def api_call(request: Request):  # Fixed typo: requst -> request
 
 # Run the server
 if __name__ == "__main__":
-    import uvicorn
     uvicorn.run(app, host="0.0.0.0", port=8000)
 
 

@@ -101,7 +101,3 @@ class trainer():
 
             # save the model state
             torch.save(self.model.state_dict(), f"/Users/johnmiller/Desktop/skinsense_backend/saved_skinsense_models/epoch_{epoch}_model.pt")
-
-# instantiate and run the trainer
-trainer = trainer(50)
-trainer.train()
