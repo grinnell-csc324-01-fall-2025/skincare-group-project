@@ -19,12 +19,9 @@ This is an [Expo](https://expo.dev) project created with [`create-expo-app`](htt
 3. Run tests
 
    ```bash
-   npm install --save-dev @testing-library/react-native @testing-library/jest-native jest react-test-renderer jest-expo
-   ```
-
-   ```bash
    npm test
    ```
+
 In the output, you'll find options to open the app in a
 
 - [development build](https://docs.expo.dev/develop/development-builds/introduction/)
