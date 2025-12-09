@@ -2,11 +2,11 @@ import React, { useState } from 'react'
 import { Alert, StyleSheet, Text, TouchableOpacity, View } from 'react-native'
 
 const App = () => {
-  const [isLoading, setIsLoading] = useState(false)
+const [isLoading, setIsLoading] = useState(false)
 const handleApiCall = async () => {
   setIsLoading(true)
   try {
-    const response = await fetch('http://localhost:8000/api_call/', {  // Fixed URL
+    const response = await fetch('http://localhost:5000/api_call/', {  // Fixed URL
       method: 'POST',
       headers: {
         'Content-Type': 'application/json'

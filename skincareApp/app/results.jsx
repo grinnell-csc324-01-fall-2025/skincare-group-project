@@ -1,6 +1,7 @@
 import { useEffect, useState } from 'react';
 import { View, Text, ActivityIndicator, StyleSheet, Platform, ScrollView } from 'react-native';
-import { useLocalSearchParams } from 'expo-router';
+import { Link, useLocalSearchParams } from 'expo-router';
+import MyButton from '../components/MyButton';
 
 const idToTest = {
   '1': { label: 'Cancerous Moles', endpoint: '/api/cancer_result', field: 'cancerResult' },
@@ -17,8 +18,13 @@ const ResultsScreen = () => {
   const [loading, setLoading] = useState(true);
 
   const getBaseUrl = () => {
-    if (Platform.OS === 'android') return 'http://10.0.2.2:5000';
-    return 'http://localhost:5000';
+    const LAN_IP = "192.168.1.203"; // replace with your computer's IP
+    return Platform.select({
+      android: "http://10.0.2.2:5000", // Android emulator
+      ios: "http://localhost:5000",    // iOS simulator
+      web: `http://${LAN_IP}:5000`,    // Expo web
+      default: `http://${LAN_IP}:5000`,
+    });
   };
 
   useEffect(() => {
@@ -97,10 +103,17 @@ const ResultsScreen = () => {
 
       {results.map((r, idx) => (
         <View key = {idx} style = {styles.resultCard}>
-          <Text style = {styles.resultLabel}>We've determined you may have 
+          <Text style = {styles.resultLabel}>We've determined you may  
             {r.ok ? (
-              <Text style = {styles.resultText}> 
-                {typeof r.value === 'object' ? JSON.stringify(r.value, null, 2) : String(r.value)}
+              <Text style = {styles.resultText}>
+                { (r.value >= 0.5)? (
+                  <Text style = {styles.resultText}> have Skin Cancer </Text>
+                ) : (
+                  <Text style = {styles.resultText}> NOT have Skin Cancer</Text>
+                  )
+                } 
+
+                {/* {typeof r.value === 'object' ? JSON.stringify(r.value, null, 2) : String(r.value)} */}
               </Text>
             ) : (
               <Text style = {styles.errorText}> Error: {r.error} </Text>
@@ -117,6 +130,10 @@ const ResultsScreen = () => {
           personalized advice.
         </Text>
       </View>
+
+      <Link href='/' push asChild>
+        <MyButton text="restart"/>
+      </Link>
     </ScrollView>
   );
 };
@@ -148,7 +165,8 @@ const styles = StyleSheet.create({
   },
   container: {
     padding: 20,
-    alignItems: 'stretch',
+    alignItems: 'center',
+    justifyContent: 'center'
   },
   title: {
     fontSize: 45,
