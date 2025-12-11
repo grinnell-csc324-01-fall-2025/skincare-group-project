@@ -1,5 +1,4 @@
 import { View, Text, Button, Image, TouchableOpacity, Alert, StyleSheet, SafeAreaViewBase} from 'react-native'
-import { Ionicons } from '@expo/vector-icons';
 import React, {useState, useRef, useEffect, use} from 'react'
 import { Link } from 'expo-router';
 import * as ImagePicker from 'expo-image-picker';
@@ -61,7 +60,7 @@ const homeScreen = () => {
 
       // Let user pick an image
       let result = await ImagePicker.launchImageLibraryAsync({
-        mediaTypes: 'images',
+        mediaTypes: ImagePicker.MediaTypeOptions.Images,
         allowsEditing: true,
         aspect: [4,3],
         quality: 1,
@@ -70,7 +69,11 @@ const homeScreen = () => {
       if (!result.canceled) {
         setImage(result.assets[0].uri);
         setReady(2);
+
+        // console.log("picked image uri: ", result.assets[0].uri, "\n");
       }
+
+      // console.log("imageRef: ", imageRef.current, "\nfound");
 
     } catch (error) {
       console.log(error);
@@ -111,7 +114,13 @@ const homeScreen = () => {
         <View style={styles.container}>
             <Image source={{uri: image}} style={styles.previewImage} />
             <MyButton text="restart" onPress={() => {setReady(0); setImage(null);}} backgroundColor='#e76f51ff'/>
-            <Link href="/concerns" push asChild>
+            <Link 
+              href={{
+                pathname: "/concerns", 
+                params: {imageUri : image}
+              }} 
+              push 
+              asChild>
               <MyButton text="Next"/>
             </Link>
         </View>
@@ -126,7 +135,13 @@ const homeScreen = () => {
         <View style={styles.imagePicker}> 
           <Image source={{uri: image}} style={styles.previewImage} />
           <MyButton text="restart" onPress={() => {setReady(0); setImage(null);}} backgroundColor='#e76f51ff'/>
-          <Link href="/concerns" push asChild>
+          <Link 
+            href={{
+              pathname: "/concerns", 
+              params: {imageUri : image}
+            }} 
+            push 
+            asChild>
             <MyButton text="Next"/>
           </Link>
         </View>

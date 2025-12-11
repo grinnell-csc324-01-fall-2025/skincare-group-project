@@ -2,6 +2,7 @@ import { View, Text, StyleSheet, TouchableOpacity } from 'react-native';
 import { Link } from 'expo-router';
 import { useState } from 'react';
 import MyButton from '../components/MyButton';
+import { useLocalSearchParams } from 'expo-router';
 
 const options = [
   {id: '1', label: 'Cancerous Moles'},
@@ -10,6 +11,9 @@ const options = [
 ];
 
 const concernsScreen = () => {
+  //pass the image from the previous screen index
+  const {imageUri} = useLocalSearchParams();
+
   const [selectedIds, setSelectedIds] = useState([]);
 
   const toggleOption = (id) => {
@@ -48,7 +52,13 @@ const concernsScreen = () => {
 
     </View>
 
-      <Link href = "/results" push asChild>
+      <Link
+        href={{
+          pathname: "/results", 
+          params: {tests: selectedIds.join(','), imageUri: imageUri}
+        }} 
+        push 
+        asChild>
         <MyButton text="Next"/>
       </Link>
     </View>

@@ -67,7 +67,7 @@
       "@testing-library/jest-native/extend-expect"
     ],
     "transformIgnorePatterns": [
-      "node_modules/(?!(react-native|@react-native|expo-router)/)"
+      "node_modules/(?!(react-native|@react-native|expo-router|jest-expo|react-native-reanimated|expo-modules-core|@unimodules|@expo|expo|@react-navigation|react-native-gesture-handler|react-native-safe-area-context)/)"
     ],
     "transform": {
       "^.+\\\\.[tj]sx?$": "babel-jest"
