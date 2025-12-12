@@ -24,7 +24,7 @@ try:
     model = models.resnet18(pretrained=False)
     num_ftrs = model.fc.in_features
     model.fc = torch.nn.Linear(num_ftrs, 2)  # adjust classes
-    # model.load_state_dict(torch.load("models/cancer_resnet18.pth", map_location=DEVICE))
+    model.load_state_dict(torch.load("models/cancer_resnet18.pth", map_location=DEVICE))
     model.to(DEVICE)
     model.eval()
 except Exception as e:
@@ -123,6 +123,21 @@ async def skin_analysis(image: UploadFile = File(...), test: Optional[str] = For
         return {"skinAnalysis": {"label": label, "confidence": confidence}}
     except Exception as e:
         raise HTTPException(status_code=400, detail=f"invalid image or processing error: {e}")
+    
+@app.post("/api/acne_analysis")
+async def acne_analysis(image: UploadFile = File(...), test: Optional[str] = Form(None)):
+    try:
+        contents = await image.read()
+        img = Image.open(io.BytesIO(contents)).convert("RGB")
+
+        # Placeholder result
+        label = "moderate"
+        confidence = 0.5
+
+        return {"acneAnalysis": {"label": label, "confidence": confidence}}
+    except Exception as e:
+        raise HTTPException(status_code=400, detail=str(e))
+
 
 # Run the server
 if __name__ == "__main__":

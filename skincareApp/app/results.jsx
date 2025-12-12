@@ -6,6 +6,7 @@ import MyButton from '../components/MyButton';
 const idToTest = {
   '1': { label: 'Cancerous Moles', endpoint: '/api/cancer_result', field: 'cancerResult' },
   '2': { label: 'Skin Type', endpoint: '/api/skin_analysis', field: 'skinAnalysis' },
+  '3': { label: 'Acne Type', endpoint: '/api/acne_analysis', field: 'acneAnalysis' },
   // add more mappings as needed
   // make sure backend endpoints correspond with these endpoints and that they return
   // JSON with the expected fields
