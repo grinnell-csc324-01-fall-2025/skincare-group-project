@@ -58,7 +58,8 @@
     "preset": "jest-expo",
     "testEnvironment": "jsdom",
     "moduleNameMapper": {
-      "^react-native/Libraries/BatchedBridge/NativeModules$": "<rootDir>/jest-mocks/NativeModules.js"
+      "^react-native/Libraries/BatchedBridge/NativeModules$": "<rootDir>/jest-mocks/NativeModules.js",
+      "\\.(css|less|scss)$": "identity-obj-proxy"
     },
     "setupFiles": [
       "<rootDir>/jest.setup.js"
@@ -66,12 +67,13 @@
     "setupFilesAfterEnv": [
       "@testing-library/jest-native/extend-expect"
     ],
-    "transformIgnorePatterns": [
-      "node_modules/(?!(react-native|@react-native|expo-router|jest-expo|react-native-reanimated|expo-modules-core|@unimodules|@expo|expo|@react-navigation|react-native-gesture-handler|react-native-safe-area-context)/)"
-    ],
     "transform": {
       "^.+\\\\.[tj]sx?$": "babel-jest"
-    }
+    },
+    "transformIgnorePatterns": [
+       "/node_modules/(?!(expo|expo-router|expo-constants|expo-linking|expo-modules-core|expo-modules-core|expo-image-picker|@expo|react-native|react-native-.*|@react-native/.*)/)"
+    ]
+
   },
   "private": true
 }

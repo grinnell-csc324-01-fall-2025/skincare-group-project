@@ -27,9 +27,40 @@ jest.mock('react-native-gesture-handler', () => {
 });
 
 // mock expo-router hooks used in tests
+// Create a shared store the test can override
+let mockParams = {};
+
 jest.mock('expo-router', () => ({
   Link: ({ children }) => children,
-  useLocalSearchParams: () => ({}),
-  useSearchParams: () => ({}),
-  useRouter: () => ({ push: jest.fn(), replace: jest.fn(), back: jest.fn() }),
+  Stack: {
+    Screen: ({ children }) => children,
+  },
+
+  useLocalSearchParams: () => mockParams,
+  useSearchParams: () => mockParams,
+
+  useRouter: () => ({
+    push: jest.fn(),
+    replace: jest.fn(),
+    back: jest.fn(),
+  }),
+
+  useSegments: () => [],
 }));
+
+// Utility for tests to set params
+export const setMockRouterParams = (params) => {
+  mockParams = params;
+};
+
+// jest.mock('expo-router', () => ({
+//   Link: ({ children }) => children,
+//   useLocalSearchParams: () => ({}),
+//   useSearchParams: () => ({}),
+//   useRouter: () => ({ push: jest.fn(), replace: jest.fn(), back: jest.fn() }),
+// }));
+// jest.mock('expo-router', () => ({
+//   Link: ({ children }) => children,
+//   useRouter: () => ({ push: jest.fn() }),
+//   useSegments: () => [],
+// }));
