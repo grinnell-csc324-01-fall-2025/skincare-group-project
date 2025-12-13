@@ -97,21 +97,40 @@ const ResultsScreen = () => {
     );
   }
 
+  let index = 0;
+  const ids = tests.split(',');
+
+  const findResult = (value) => {
+    let result = "";
+
+    if (value >= 0.5) {
+      if (ids[index] == '1') {
+        result = " have Skin Cancer ";
+      } else if (ids[index] == '2') {
+        result = " have Oily Skin \nYou may want to condsider using the following products: \n- La Roche-Posay Effaclar Purifying Foaming Gel \n- Avène’s Cleanance Cleansing Gel ";
+      }
+    } else {
+      if (ids[index] == '1') {
+        result = " NOT have Skin Cancer ";
+      } else if (ids[index] == '2') {
+        result = " have Dry Skin \nYou mak want to consider using the following products: \n- Cetaphil Daily Hydrating Lotion \n- CeraVe Moisturizing Cream ";
+      }
+    }
+
+    index += 1;
+    return result;
+  }
+
   return (
     <ScrollView contentContainerStyle = {styles.container}>
       <Text style = {styles.title}>Your results: </Text>
 
       {results.map((r, idx) => (
         <View key = {idx} style = {styles.resultCard}>
-          <Text style = {styles.resultLabel}>We've determined you may  
+          <Text style = {styles.otherTest}>We've determined you may  
             {r.ok ? (
               <Text style = {styles.resultText}>
-                { (r.value >= 0.5)? (
-                  <Text style = {styles.resultText}> have Skin Cancer </Text>
-                ) : (
-                  <Text style = {styles.resultText}> NOT have Skin Cancer</Text>
-                  )
-                } 
+                {findResult(r.value)}
 
                 {/* {typeof r.value === 'object' ? JSON.stringify(r.value, null, 2) : String(r.value)} */}
               </Text>
@@ -187,12 +206,16 @@ const styles = StyleSheet.create({
     marginBottom: 6,
   },
   resultText: {
-    fontSize: 24,
-    fontWeight: '600',
+    fontSize: 20,
+    fontWeight: 'bold',
     color: '#023047',
   },
   errorText: {
     fontSize: 24,
     color: '#d00000',
   },
+  otherTest: {
+    fontSize: 24,
+    color: '#023047'
+  }
 });
