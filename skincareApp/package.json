@@ -13,7 +13,14 @@
     "test:coverage": "jest --coverage"
   },
   "jest": {
-    "preset": "react-native"
+    "preset": "react-native",
+    "module.exports": {
+      "coverageThreshold": {
+          "global": {
+              "lines": 80
+        }
+      }
+    }
   },
   "dependencies": {
     "@expo/vector-icons": "^15.0.3",

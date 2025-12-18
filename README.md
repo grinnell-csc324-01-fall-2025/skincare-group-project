@@ -25,9 +25,14 @@ First run the backend in one terminal by:
 ```
     $ cd .\skincareApp\
     $ npm install
-    $ npm run test:coverage
-    $ npx expo-doctor@latest
     $ npx expo start
+```
+
+    If you'd like to run frontend code coverage and build validation in your terminal, run:
+
+```
+    $ npm run test:coverage
+    $ npx expo-doctor@latest --verbose
 ```
 
     If you need to fix dependency issues after running the build validation, run:
