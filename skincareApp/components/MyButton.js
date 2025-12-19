@@ -1,9 +1,9 @@
 import { StyleSheet, TouchableOpacity,Text, View } from "react-native";
 import React from "react";
 
-export default function MyButton ({text, onPress, disabled, backgroundColor = "#219ebcff"}) {
+export default function MyButton ({testID="MyButton", show, text, onPress, disabled, backgroundColor = "#219ebcff"}) {
     return(
-        <TouchableOpacity style={[styles.button, {backgroundColor : backgroundColor}]} onPress={onPress} disabled={disabled}>
+        <TouchableOpacity testID={testID} style={[styles.button, {backgroundColor : backgroundColor}]} onPress={onPress} disabled={disabled}>
             <Text style={styles.text}>{text}</Text>
         </TouchableOpacity>
     )

@@ -93,7 +93,7 @@ const ResultsScreen = () => {
   if (loading) {
     return (
       <View style={styles.loadingContainer}>
-        <ActivityIndicator size="large" />
+        <ActivityIndicator size="large" testID="loading-indicator"/>
       </View>
     );
   }
@@ -124,7 +124,7 @@ const ResultsScreen = () => {
 
   return (
     <ScrollView contentContainerStyle = {styles.container}>
-      <Text style = {styles.title}>Your results: </Text>
+      <Text style = {styles.title}>Your results:</Text>
 
       {results.map((r, idx) => (
         <View key = {idx} style = {styles.resultCard}>
@@ -143,7 +143,7 @@ const ResultsScreen = () => {
       ))}
 
       <View style = {styles.infoBox}>
-        <Text style = {styles.infoTitle}>Recommendations </Text>
+        <Text style = {styles.infoTitle}>Recommendations</Text>
         <Text style = {styles.infoText}>
           Please note that these results are not a diagnosis. You may want to consult
           a dermatologist to get a professional opinion on these results and

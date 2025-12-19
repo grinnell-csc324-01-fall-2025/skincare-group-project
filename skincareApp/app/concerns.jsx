@@ -10,7 +10,7 @@ const options = [
   {id: '3', label: 'Acne Type'},
 ];
 
-const concernsScreen = () => {
+const ConcernsScreen = () => {
   //pass the image from the previous screen index
   const {imageUri} = useLocalSearchParams();
 
@@ -59,13 +59,13 @@ const concernsScreen = () => {
         }} 
         push 
         asChild>
-        <MyButton text="Next"/>
+        <MyButton text="Next" testID="Next-Button"/>
       </Link>
     </View>
   );
 };
 
-export default concernsScreen
+export default ConcernsScreen
 
 const styles = StyleSheet.create({
   container: {
