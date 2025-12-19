@@ -152,7 +152,7 @@ const ResultsScreen = () => {
       </View>
 
       <Link href='/' push asChild>
-        <MyButton text="restart"/>
+        <MyButton text="restart" backgroundColor='#e76f51ff'/>
       </Link>
     </ScrollView>
   );
