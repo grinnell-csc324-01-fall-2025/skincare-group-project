@@ -17,6 +17,6 @@ jobs:
           node-version: '22'
       - run:  |
           cd skincareApp
-          npm ci --verbose
+          npm ci
           npm test
 
