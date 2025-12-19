@@ -33,7 +33,7 @@ const HomeScreen = () => {
           }}
           push
           asChild>
-            <MyButton text= "Select a picture"/>
+            <MyButton text= "Select a picture" testID="select-picture-button"/>
         </Link>
       </View>
   )
