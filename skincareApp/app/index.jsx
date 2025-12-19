@@ -4,7 +4,7 @@ import { Link } from 'expo-router';
 import MyButton from '../components/MyButton';
 
 
-const homeScreen = () => {
+const HomeScreen = () => {
 
   return (
     <View style = {styles.container}>
@@ -39,7 +39,7 @@ const homeScreen = () => {
   )
 }
 
-export default homeScreen
+export default HomeScreen
 
 const styles = StyleSheet.create({
   container: {
